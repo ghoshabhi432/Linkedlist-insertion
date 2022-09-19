@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+using namespace std;
+class node{
+    public:
+    int data;
+    node *next;
+    node(int data){
+        this->data=data;
+        this->next=NULL;
+    }
+    
+};
+void insertnodeatend(node* &head,int data){
+    node* ptr=new node(data);
+    node* temp=head;
+    if(head==NULL){
+        head=ptr;
+        return;
+    }
+    while(temp->next!=NULL){
+        temp=temp->next;
+    }
+    temp->next=ptr;
+}
+void printnode(node* &head){
+    node *temp;
+    temp=head;
+    while(temp!=NULL){
+        cout<<temp->data<<" ";
+        temp=temp->next;
+    }
+}
+int main() {
+	// your code goes here
+	//insert at the end of linkedlist
+    node *headend=NULL;
+    insertnodeatend(headend,10);
+    insertnodeatend(headend,20);
+    insertnodeatend(headend,30);
+    printnode(headend);
+    	
+	return 0;
+}
