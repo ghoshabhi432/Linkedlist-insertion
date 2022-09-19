@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+using namespace std;
+class node{
+    public:
+    int data;
+    node *next;
+    node(int data){
+        this->data=data;
+        this->next=NULL;
+    }
+    
+};
+void insertnodeatbegining(node* &head,int data){
+    node *ptr = new node(data);
+    if(head==NULL){
+        head=ptr;
+        return;
+    }
+    ptr->next=head;
+    head=ptr;
+}
+void printnode(node* &head){
+    node *temp;
+    temp=head;
+    while(temp!=NULL){
+        cout<<temp->data<<" ";
+        temp=temp->next;
+    }
+}
+int main() {
+	// your code goes here
+	node *head=NULL;
+	//insert at the begining of linkedlist
+	insertnodeatbegining(head,12);
+	insertnodeatbegining(head,13);
+	insertnodeatbegining(head,15);
+	printnode(head);
+	cout<<endl; 	
+	return 0;
+}
